@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Journée - Écrire. Apprendre. Se souvenir.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1d1d1f;
+            --text-muted: #86868b;
+            --border-color: #d2d2d7;
+            
+            /* Pastel Colors for interaction */
+            --pastel-orange: #ffe8cc; /* Ensoleillé */
+            --pastel-blue: #d6f0ff;   /* Nuageux / Pluvieux */
+            --pastel-green: #d1f4d9;  /* Venteux */
+            --journal-beige: #f5f5f0; /* Journal background */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', "Times New Roman", Times, serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ----- Header / Hero ----- */
+        header {
+            text-align: center;
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            margin: 0 0 16px;
+            letter-spacing: -0.01em;
+            color: #000;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .tagline-ja {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 56px;
+            letter-spacing: 0.05em;
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .app-store-btn:hover {
+            transform: scale(1.03);
+            background: #1d1d1f;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* ----- Concept Section ----- */
+        .concept-section {
+            background-color: #fbfbfd;
+            padding: 120px 0;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .concept-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        .concept-text {
+            font-size: 1.25rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .interactive-word {
+            display: inline-block;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            padding: 0 4px;
+            border-radius: 4px;
+            cursor: default;
+        }
+
+        .interactive-word:hover {
+            background-color: var(--pastel-orange);
+            color: #000;
+        }
+        
+        .interactive-word.blue:hover { background-color: var(--pastel-blue); }
+        .interactive-word.green:hover { background-color: var(--pastel-green); }
+
+        /* ----- Features Grid ----- */
+        .features-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .features-header h2 {
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding-bottom: 140px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 48px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            border-color: transparent;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+            transform: translateY(-8px);
+        }
+
+        /* Hover Color Effects for Cards */
+        .feature-card:nth-child(1):hover { background-color: var(--journal-beige); }
+        .feature-card:nth-child(2):hover { background-color: var(--pastel-blue); }
+        .feature-card:nth-child(3):hover { background-color: var(--pastel-orange); }
+        .feature-card:nth-child(4):hover { background-color: #f7f7f9; }
+        .feature-card:nth-child(5):hover { background-color: var(--pastel-green); }
+        .feature-card:nth-child(6):hover { background-color: #fafafa; }
+
+        .feature-num {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0 0 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-desc {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ----- Philosophy Section ----- */
+        .philosophy-section {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .philosophy-section h3 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .philosophy-section p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ----- Weather Chips ----- */
+        .weather-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .chip {
+            padding: 8px 16px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .chip:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .chip.active-orange { background-color: var(--pastel-orange); border-color: var(--pastel-orange); color: #000; }
+        .chip.active-blue { background-color: var(--pastel-blue); border-color: var(--pastel-blue); color: #000; }
+        .chip.active-green { background-color: var(--pastel-green); border-color: var(--pastel-green); color: #000; }
+
+        /* ----- Footer ----- */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .concept-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <!-- Ensure je.png is in the same directory -->
+            <img src="je.png" alt="Je Logo" class="logo-img" onerror="this.style.display='none'">
+            <h1 class="serif">Ma Journée</h1>
+            <p class="tagline">Écrire. Apprendre. Se souvenir.</p>
+            <p class="tagline-ja">書く・学ぶ・覚えておく。</p>
+            <a href="#" class="app-store-btn">Download on the App Store</a>
+        </div>
+    </header>
+
+    <!-- Concept -->
+    <section class="concept-section">
+        <div class="container">
+            <h2 class="concept-title">色を塗る。<br>人生を豊かにする。</h2>
+            <p class="concept-text">
+                白黒、グレーの静かな世界。<br>
+                あなたがフランス語で<span class="interactive-word blue">日記を書く</span>ことで、その言葉は学びに変わり、<br>
+                真っ白なページに<span class="interactive-word">美しい色</span>をつけます。<br>
+                毎日少しずつ、自分の言葉で残す記録が、<span class="interactive-word green">あなたの人生を豊かにする</span>のです。
+            </p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <div class="container">
+        <div class="features-header">
+            <h2 class="serif">Les Fonctions</h2>
+        </div>
+
+        <div class="features-grid">
+            <!-- 1. Journal -->
+            <div class="feature-card">
+                <span class="feature-num">01</span>
+                <h3 class="feature-title">Le Journal</h3>
+                <p class="feature-desc">
+                    カレンダー中心のミニマルな日記。天気を選ぶと、ランダムで可愛いパステルカラーに色づきます。日記を書いた日は、小さな点で記録を可視化。背景は温かみのある薄いベージュに変わります。
+                </p>
+                <div class="weather-chips">
+                    <div class="chip" onmouseover="this.classList.add('active-orange')" onmouseout="this.classList.remove('active-orange')">Ensoleillé</div>
+                    <div class="chip" onmouseover="this.classList.add('active-blue')" onmouseout="this.classList.remove('active-blue')">Pluvieux</div>
+                    <div class="chip" onmouseover="this.classList.add('active-green')" onmouseout="this.classList.remove('active-green')">Venteux</div>
+                </div>
+            </div>
+
+            <!-- 2. Multilingue -->
+            <div class="feature-card">
+                <span class="feature-num">02</span>
+                <h3 class="feature-title">Multilingue</h3>
+                <p class="feature-desc">
+                    主役はフランス語。そして日本語や英語など、あなたのサポート言語を補助として並べて記録できます。言語学習に最適な執筆環境を提供します。
+                </p>
+            </div>
+
+            <!-- 3. Photos -->
+            <div class="feature-card">
+                <span class="feature-num">03</span>
+                <h3 class="feature-title">Photos</h3>
+                <p class="feature-desc">
+                    その日の思い出は、言葉だけでなく写真でも。1枚だけでなく、複数の写真を美しく配置して保存することができます。
+                </p>
+            </div>
+
+            <!-- 4. Vocabulaire -->
+            <div class="feature-card">
+                <span class="feature-num">04</span>
+                <h3 class="feature-title">Vocabulaire</h3>
+                <p class="feature-desc">
+                    日記を書きながら、わからない単語を長押しして「Ajouter au vocabulaire」で直接単語帳へ。品詞、性別、複数形など、詳細な情報も後から追加可能です。
+                </p>
+            </div>
+
+            <!-- 5. Phrases -->
+            <div class="feature-card">
+                <span class="feature-num">05</span>
+                <h3 class="feature-title">Phrases</h3>
+                <p class="feature-desc">
+                    実際に日記で使った「生きた文章」をフレーズ帳にストック。自分が何回そのフレーズや単語を使ったかを表示し、成長を実感できます。
+                </p>
+            </div>
+
+            <!-- 6. Cartes -->
+            <div class="feature-card">
+                <span class="feature-num">06</span>
+                <h3 class="feature-title">Cartes d'apprentissage</h3>
+                <p class="feature-desc">
+                    ミニマルで真っ白なフラッシュカード。影をなくした洗練されたUIの中央に言葉を置き、スワイプ操作だけで「À revoir（復習）」と「Je connais（覚えた）」を直感的に仕分けます。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Philosophy (No AI) -->
+    <section class="philosophy-section">
+        <div class="container">
+            <h3 class="serif">Pas d'intelligence artificielle. Juste vous.</h3>
+            <p>
+                Ma Journée は「自分でフランス語を書く」ことを目的としています。<br>
+                AIによる自動生成や添削機能はありません。<br>
+                不完全でも、あなた自身の言葉で綴ることに価値があるからです。
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="https://81ko.github.io/ExamenCVQ/support.html" target="_blank">Support / Contact</a>
+            <p>&copy; 2026 Ma Journée App. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
