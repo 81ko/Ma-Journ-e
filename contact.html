@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Ma Journée</title>
+    <title>Support & Contact - Ma Journée</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -15,17 +15,23 @@
             <a href="index.html">
                 <img src="je.png" alt="Je Logo" class="logo-img" onerror="this.style.display='none'" style="width: 60px; margin-bottom: 20px;">
             </a>
-            <h1 class="serif page-title">Contact</h1>
-            <p class="tagline-ja">お問い合わせ</p>
+            <h1 class="serif page-title">Support & Contact</h1>
+            <p class="tagline-ja">サポート・お問い合わせ</p>
         </div>
     </header>
 
     <div class="container">
         <div class="content-wrapper">
-            <p>Ma Journéeに関するご質問、ご要望、不具合のご報告などがございましたら、以下のフォームよりお気軽にご連絡ください。<br>
-            ※外部サポートサイト（<a href="https://81ko.github.io/ExamenCVQ/support.html" target="_blank" style="color: #000;">Support Page</a>）も併せてご確認ください。</p>
+            <p>Ma Journéeのご利用方法に関するご質問、ご要望、不具合のご報告などがございましたら、以下のフォームよりお気軽にご連絡ください。<br>
+            ご入力いただいた内容は、サポートチーム（eiko.annabi@gmail.com）へ直接送信されます。</p>
             
-            <form action="#" method="POST" style="margin-top: 40px;">
+            <!-- formsubmit.co を使用して指定のメールアドレスへ送信 -->
+            <form action="https://formsubmit.co/eiko.annabi@gmail.com" method="POST" style="margin-top: 40px;">
+                <!-- 隠しフィールド: 自動返信メールの件名や設定 -->
+                <input type="hidden" name="_subject" value="【Ma Journée】ウェブサイトからのお問い合わせ">
+                <input type="hidden" name="_language" value="ja">
+                <input type="hidden" name="_template" value="box">
+
                 <div class="form-group">
                     <label for="name">Nom / お名前</label>
                     <input type="text" id="name" name="name" class="form-control" required placeholder="Ex. Sophie Dupont">
@@ -50,7 +56,7 @@
         <div class="container">
             <div class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="contact.html">Contact / お問い合わせ</a>
+                <a href="contact.html">Support & Contact / サポート・お問い合わせ</a>
                 <a href="privacy.html">Politique de confidentialité / プライバシーポリシー</a>
             </div>
             <p>&copy; 2026 Ma Journée App. Tous droits réservés.</p>
