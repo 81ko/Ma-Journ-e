@@ -217,16 +217,54 @@ h1 {
 }
 .content-wrapper h2 {
     font-size: 1.5rem;
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 16px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 8px;
+}
+.content-wrapper h3 {
+    font-size: 1.2rem;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    color: #000;
 }
 .content-wrapper p, .content-wrapper li {
     font-size: 1.1rem;
     color: #444;
     line-height: 1.8;
     margin-bottom: 16px;
+}
+
+/* FAQ Styles */
+.faq-item {
+    margin-bottom: 32px;
+}
+.faq-q {
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #000;
+    margin-bottom: 8px;
+    display: flex;
+}
+.faq-q::before {
+    content: 'Q.';
+    color: var(--text-muted);
+    margin-right: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+}
+.faq-a {
+    font-size: 1.05rem;
+    color: #555;
+    display: flex;
+    line-height: 1.7;
+}
+.faq-a::before {
+    content: 'A.';
+    color: var(--text-muted);
+    margin-right: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
 }
 
 /* Form Styles */

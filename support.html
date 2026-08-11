@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Ma Journée</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header style="padding: 80px 0 40px;">
+        <div class="container">
+            <a href="index.html">
+                <img src="je.png" alt="Je Logo" class="logo-img" onerror="this.style.display='none'" style="width: 60px; margin-bottom: 20px;">
+            </a>
+            <h1 class="serif page-title">Support</h1>
+            <p class="tagline-ja">サポート・よくある質問</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            
+            <h2>Foire aux questions (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-q">日記の背景色やカレンダーの点はカスタマイズできますか？</div>
+                <div class="faq-a">色は選択した「天気」に応じて自動的にパステルカラーに変化します。日記を書いた日は自動で背景がベージュに変わり、点が表示されます。ご自身で直接色を指定する設定はありません。書くことで自然に色づく体験をお楽しみください。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">日記の画面から単語帳（Vocabulaire）へ追加する方法を教えてください。</div>
+                <div class="faq-a">日記の作成・編集画面で、単語帳に登録したい単語を長押しし、表示されるメニューから「Ajouter au vocabulaire」をタップしてください。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">AIによる添削や文章の自動生成機能はありますか？</div>
+                <div class="faq-a">Ma Journéeは「自分自身の言葉で書くこと」をコンセプトとしており、AIによる文章の添削や自動生成機能はあえて搭載していません。不完全でも、あなたの言葉で残すことに意味があります。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">機種変更時のデータ引き継ぎはどうなりますか？</div>
+                <div class="faq-a">作成した日記や単語帳のデータは、すべてお使いのデバイスおよびiCloudに保存されます。新しいiPhoneでも同じApple IDでサインインし、iCloud同期をオンにしていれば自動的にデータが引き継がれます。</div>
+            </div>
+
+            <h2 id="contact">Contactez-nous / お問い合わせ</h2>
+            <p>その他のご質問、ご要望、不具合のご報告などがございましたら、以下のフォームよりお気軽にご連絡ください。<br>
+            ご入力いただいた内容は、サポートチーム（eiko.annabi@gmail.com）へ直接送信されます。</p>
+            
+            <!-- formsubmit.co を使用して指定のメールアドレスへ送信 -->
+            <form action="https://formsubmit.co/eiko.annabi@gmail.com" method="POST" style="margin-top: 40px;">
+                <input type="hidden" name="_subject" value="【Ma Journée】アプリについてのお問い合わせ">
+                <input type="hidden" name="_language" value="ja">
+                <input type="hidden" name="_template" value="box">
+                <!-- 送信後にこのサポートページに戻ってくる設定 -->
+                <input type="hidden" name="_next" value="https://ma-journee.com/support.html">
+
+                <div class="form-group">
+                    <label for="name">Nom / お名前</label>
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="Ex. Sophie Dupont">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail / メールアドレス</label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="adresse@exemple.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message / メッセージ</label>
+                    <textarea id="message" name="message" class="form-control" required placeholder="ご用件をご入力ください..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Envoyer / 送信する</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support / サポート</a>
+                <a href="privacy.html">Politique de confidentialité / プライバシーポリシー</a>
+            </div>
+            <p>&copy; 2026 Ma Journée App. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
